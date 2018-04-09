@@ -49,3 +49,44 @@ RRRR
 OOOOOOOOOOO
 OOOO
 """
+
+Scenario: Quarter past 13:15
+When the time is "13:15:01"
+Then the clock should look like
+"""
+O
+RROO
+RRRO
+YYROOOOOOOO
+OOOO
+"""
+
+Scenario: Quarter for 16:45
+When the time is "16:45:01"
+Then the clock should look like
+"""
+O
+RRRO
+ROOO
+YYRYYRYYROO
+OOOO
+"""
+
+Scenario: Half past 06:30
+When the time is "06:30:00"
+Then the clock should look like
+"""
+Y
+ROOO
+ROOO
+YYRYYROOOOO
+OOOO
+"""
+
+Scenario: NotValid 25:00
+When the time is "25:00:00"
+Then the clock should look like
+"""
+Input Time format is not correct, shoud be HH:mm:ss
+"""
+
